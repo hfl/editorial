@@ -1,0 +1,45 @@
+- title: 序
+  link: /docs/preface/
+- title: 第一章 系统构建
+  has_children: true
+  sections:
+    - title: 第一节 Ruby 安装与使用
+      link: /docs/ruby/
+    - title: 第二节 Jekyll 安装与使用
+      link: /docs/jekyll/
+    - title: 第三节 书的编辑、存储和发布
+      link: /docs/editorial-ecosystem/
+- title: 第二章 编辑基础
+  has_children: true
+  sections:
+    - title: 第一节 Markdown 基础知识
+      link: /docs/markdown/
+    - title: 第二节 Editorial 编辑基础
+      link: /docs/editorial-basics/
+- title: 第三章 Editorial 结构
+  link: /docs/editorial/
+- title: 第四章 编辑日志
+  has_children: true
+  sections:
+    - title: 第一节
+      link: 05
+    - title: 第二节
+      link: 05
+- title: 第五章 编辑指南
+  link: /docs/guide/
+- title: 第六章
+  link: 07
+- title: 第七章
+  link: 08
+- title: 第八章
+  link: 09
+- title: 第九章
+  link: 10
+- title: 第十章
+  link: 11
+- title: 第十一章
+  link: 12
+- title: 第十二章
+  link: 13
+- title: 跋
+  link: 14

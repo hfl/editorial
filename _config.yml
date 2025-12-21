@@ -1,0 +1,49 @@
+# 书名
+title: 用 Jekyll 和 Editorial 写书
+# 作者
+author: 黄飞龙
+description: 长期从事文献数字化相关领域研究，熟悉图书馆学，蒙古学等。
+# 作者电子邮箱
+email: huang_fl@sina.com
+telephone: (0471)4865299
+address: Daxue West Road #235
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jekyllrb
+github_username:  jekyll
+
+collections:
+  book:
+    output: true
+    permalink: /:collection/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: book
+    values:
+      layout: page
+
+# Build settings
+plugins:
+  - jekyll-feed
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

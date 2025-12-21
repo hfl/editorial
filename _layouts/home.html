@@ -1,0 +1,58 @@
+---
+layout: default
+---
+								<section id="banner">
+									<div class="content">
+										<header>
+											<h1>{{page.title}}</h1>
+											<p>{{page.subtitle}}</p>
+										</header>
+										{{content}}
+										<ul class="actions">
+											<li><a href="/about/" class="button big">详细内容……</a></li>
+										</ul>
+									</div>
+									<span class="image object">
+										<img src="/assets/images/{{page.home_image}}" alt="" />
+									</span>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>本书特点</h2>
+									</header>
+									<div class="features">
+									{% for feature in site.data.features %}
+										<article>
+											<span class="icon {% cycle 'fa-gem', 'solid fa-paper-plane', 'solid fa-rocket', 'solid fa-signal' %}"></span>
+											<div class="content">
+												<h3>{{feature.title}}</h3>
+											  {{feature.content}}
+											</div>
+										</article>
+									{% endfor %}
+									</div>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>编书日记</h2>
+									</header>
+									<div class="posts">
+								    {% for post in site.posts %}
+										<article>
+											<a href="#" class="image"><img src="/assets/images/pic01.jpg" alt="" /></a>
+											<h3>{{ post.title }}</h3>
+											<p>
+											{{post.content|strip_html|truncate: 100, "……"}}
+											</p>
+											<ul class="actions">
+												<li><a href="{{ post.url }}" class="button">详细……</a></li>
+											</ul>
+										</article>
+										{% endfor %}
+									</div>
+								</section>
+
