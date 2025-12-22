@@ -3,3 +3,19 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
+# Swap files
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+
+# Backup files
+*~
+
+# Undo files
+[._]*.un~
+
+# Session files
+Session.vim
+Sessionx.vim
+
+# Netrw history
+netrwhist
