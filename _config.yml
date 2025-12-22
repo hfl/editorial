@@ -7,7 +7,7 @@ description: 长期从事文献数字化相关领域研究，熟悉图书馆学�
 email: huang_fl@sina.com
 telephone: (0471)4865299
 address: Daxue West Road #235
-baseurl: "/editorial" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll

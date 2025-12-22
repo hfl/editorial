@@ -1,8 +1,8 @@
-- title: 通俗易懂
-  content: Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
-- title: 面向文科生
-  content: Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
-- title: 文理交融
-  content: Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
-- title: 实时更新
-  content: Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
+- title: 轻松上手
+  content: 系统尽量做到即装即用，减少用户配置。让用户轻松上手使用，将更多精力投入到著作的编写中。
+- title: 实时预览
+  content: 用户在本地安装完系统后可以进行一边编写著作，一边预览发布效果。同时系统还带有日志系统，在创作过程中有需要记录的感想或者问题可以随时记录下来。
+- title: 云端存储
+  content: 用户可以在本地计算机上单机运行系统进行创作，如果需要在不同地点或者计算机上进行工作，也可以将其通过Git软件存贮到远程服务器上，例如 GitHub 等，保持同步更新。
+- title: 多版本发布
+  content: 系统默认使用基于Markdown格式的HTML语言创作，以网站形式呈现。但是，同时还可以提供PDF，以及Epub等格式的数字图书。 
