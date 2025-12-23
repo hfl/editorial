@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Ruby 的安装与使用
+title: 第一节 Ruby 的安装与使用
+chapter_title: 第一章 系统构建
 permalink: /docs/ruby/
 ---
 

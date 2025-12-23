@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Editorial 编辑基础
+title: 第二节 Editorial 编辑基础
+chapter_title: 第二章 编辑基础
 permalink: /docs/editorial-basics/
 ---
 

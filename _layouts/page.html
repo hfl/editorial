@@ -5,6 +5,6 @@ layout: default
 	<header class="main">
 		<h1>{{page.title}}</h1>
 	</header>
-<span class="image main"><img src="/assets/images/pic11.jpg" alt="" /></span>
+    <span class="image main"><img src="/assets/images/{{page.image|default: 'title.jpg'}}" /></span>
 {{content}}
 </section>

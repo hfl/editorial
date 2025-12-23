@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Editorial 结构
+title: 第三章 Editorial 结构
+chapter_title: 第三章 Editorial 结构
 permalink: /docs/editorial/
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: page
-title: 书的编辑系统
+title: 第三节 编辑生态
+chapter_title: 第一章 系统构建
 permalink: /docs/editorial-ecosystem/
 ---
 

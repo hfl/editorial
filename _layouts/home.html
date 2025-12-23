@@ -43,7 +43,7 @@ layout: default
 									<div class="posts">
 								    {% for post in site.posts %}
 										<article>
-											<a href="#" class="image"><img src="/assets/images/pic01.jpg" alt="" /></a>
+                                            <a href="{{post.url}}" class="image"><img src="/assets/images/{%- cycle 'blog01.jpg', 'blog02.jpg', 'blog03.jpg', 'blog04.jpg', 'blog05.jpg', 'blog06.jpg' -%}" alt="{{post.title}}"></a>
 											<h3>{{ post.title }}</h3>
 											<p>
 											{{post.content|strip_html|truncate: 100, "……"}}

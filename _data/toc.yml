@@ -18,28 +18,16 @@
       link: /docs/editorial-basics/
 - title: 第三章 Editorial 结构
   link: /docs/editorial/
-- title: 第四章 编辑日志
+- title: 第四章 编者日志
   has_children: true
   sections:
-    - title: 第一节
-      link: 05
-    - title: 第二节
-      link: 05
+    - title: 第一节 日志结构
+      link: /docs/blog-basics/
+    - title: 第二节 日志内容
+      link: /docs/blog-content/
 - title: 第五章 编辑指南
   link: /docs/guide/
-- title: 第六章
-  link: 07
-- title: 第七章
-  link: 08
-- title: 第八章
-  link: 09
-- title: 第九章
-  link: 10
-- title: 第十章
-  link: 11
-- title: 第十一章
-  link: 12
-- title: 第十二章
-  link: 13
+- title: 第六章 发布与部署
+  link: /docs/deploy-publish/
 - title: 跋
-  link: 14
+  link: /docs/postscript/

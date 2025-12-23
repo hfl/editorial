@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Jekyll 的安装和使用
+title: 第二节 Jekyll 的安装和使用
+chapter_title: 第一章 系统构建
 permalink: /docs/jekyll/
 ---
 
