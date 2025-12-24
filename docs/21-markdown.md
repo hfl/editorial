@@ -540,7 +540,7 @@ paragraph
 
 kramdown 通过一些常用的语法提供了一些很少用的功能。这允许需要的时候可以使用这些扩展功能。当前有些扩展可以忽略文字（类似于注释），或者插入输出 kramdown 选项设置的文字。
 
-这有一个显示如恶化插入注释的示例：
+这有一个显示插入注释的示例：
 
 This is a paragraph
 {::comment}
@@ -566,4 +566,214 @@ Extensions can also be used
 inline {::nomarkdown}**see**{:/}!
 ~~~
 
+如上所述，扩展语法类同于 ALD。然而扩展名没有终止冒号，而且扩展结束标签在扩展名字和冒号之间需要一个反斜线。当然也可以使用结束标签的简化形式，如`{:/}`。属性定义可以用空格同将属性名和开始标签分开。如果扩展没有主体，也可以在右侧使用一个斜线关闭括号：
 
+
+{::options auto_ids="false" /}
+# Header without id
+
+实现方式：
+
+~~~
+{::options auto_ids="false" /}
+# Header without id
+~~~
+
+## 二 行内级元素标记——文字修饰符合
+
+### 1 加重
+
+通过给指定文字前后加上星号或者下划线来将其标为重点文字：
+
+这是*重点*， _这_ 也是!
+
+实现方式：
+
+~~~
+这是*重点*， _这_ 也是!
+~~~
+
+注意：
+1. 这里我们对该显示方式做了优化，使用字符下面加点的方式显示！
+2. 对于使用下划线的形式，由于前后需要加上空格才能正常显示，所以对于汉语书写推荐使用***星号***形式。
+
+加粗可以通过双星号实现：
+
+这是**加粗**，**这**也是！
+
+实现方式：
+
+~~~
+这是**加粗**，**这**也是！
+~~~
+
+星号也可以用于将一个词的一部分加粗：
+
+**J**ekyll 是一款静态网站生成软件。
+
+实现方式：
+
+~~~
+**J**ekyll 是一款静态网站生成软件。
+~~~
+
+### 2 链接和图像
+
+最基本的链接生成方式是用方括号中写入链接文字，随后将链接地址放入圆括号中：
+
+一个可以访问 kramdown 主页的[链接](http://kramdown.gettalong.org)
+
+实现方式：
+
+~~~
+一个可以访问 kramdown 主页的[链接](http://kramdown.gettalong.org)
+~~~
+
+也可以加入 `title` 提示：
+
+一个可以访问 kramdown 主页的[链接](http://kramdown.gettalong.org "kramdown 主页")
+
+实现方式：
+
+~~~
+一个可以访问 kramdown 主页的[链接](http://kramdown.gettalong.org "kramdown 主页")
+~~~
+
+还有另一种不打断文字流的方式创建链接。将 URL 和 title 通过参考名定义，然后在文中就可以用方括号引用此参考名来使用了：
+
+可以访问 kramdown 主页的[链接][kramdown link]。
+
+[kramdown link]: http://kramdown.gettalong.org "kramdown 主页"
+
+实现方式：
+~~~
+可以访问 kramdown 主页的[链接][kramdown link]
+
+[kramdown link]: http://kramdown.gettalong.org "kramdown 主页"
+~~~
+
+如果链接文字就是参考名，第二个方括号可以省略：
+
+可以访问 [kramdown 主页]。
+
+[kramdown 主页]: http://kramdown.gettalong.org "kramdown 主页"
+
+实现方式：
+
+~~~
+可以访问 [kramdown 主页]。
+
+[kramdown 主页]: http://kramdown.gettalong.org "kramdown 主页"
+~~~
+
+图像也是以类似方式创建：只需要在方括号前面加一个叹号。方括号内的链接文字就是图像的替换文字，链接 URL
+就是图像的源地址：
+
+一个图像：![青草](https://kramdown.gettalong.org/img/image.jpg)
+
+实现方式：
+
+~~~
+一个图像：![青草](https://kramdown.gettalong.org/img/image.jpg)
+~~~
+
+### 3 行内代码
+
+将文字使用反引号`` ` ``引起来就完成了代码标记：
+
+用 `Kramdown::Document.new(text).to_html` 方法将 `text` 使用 kramdown 语法转换为 HTML。
+
+实现方法：
+
+~~~
+用 `Kramdown::Document.new(text).to_html` 方法将 `text` 使用 kramdown 语法转换为 HTML。
+~~~
+
+如果你想要使用字符反引号，只需要用两个或者更多的成对反引号将其包裹即可。然后需要在中间的反引号左右各加一个空格会被忽略掉：
+
+用反引号标记代码，例如 ````  `code` ````。
+
+实现方式：
+
+~~~
+用反引号标记代码，例如 ````  `code` ````。
+~~~
+
+### 4 脚注
+
+kramdown 中脚注很好用。文字中只需要设置一个脚注标记（方括号内一个扬抑符^和一个脚标名），然后在某处定义该脚注（看起来类似于参考链接的定义）：
+
+这是带有脚注[^1]的文字。
+
+[^1]: 在这里书写校注的内容
+
+实现方式：
+
+~~~
+这是带有脚注[^1]的文字。
+
+[^1]: 在这里书写校注的内容
+~~~
+
+脚注的定义可以包括任何块级元素，只要所有行都与校注的定义具有同级别的缩进（四个空格或者一个 tab）即可：
+
+
+这是带有脚注[^i]的文字。
+
+[^i]:
+    在这里书写校注的内容
+
+    > 这里还有一个引用！
+
+实现方式：
+
+~~~
+这是带有脚注[^i]的文字。
+
+[^i]:
+    在这里书写校注的内容
+
+    > 这里还有一个引用！
+~~~
+
+如上所见，脚注的名字仅用于做为锚点，而数字会根据文档顺序自动生成。上面我们为脚注起了 i 的名字，却根据顺序显示了 2。相同的脚注会指向同一个脚注内容。
+
+### 5 缩写
+
+缩写一旦定义，就会以提示框形式显示。所以你可以先编写文字，最后在定义缩写。例如
+
+这是一个HTML示例。
+
+*[HTML]: Hyper Text Markup Lanugage
+
+实现方式：
+
+~~~
+这是一个HTML示例。
+
+*[HTML]: Hyper Text Markup Lanugage
+~~~
+
+### 6 HTML 元素
+
+HTML 不仅支持块级元素也支持行内元素：
+
+这是<span style="color: red">用红色书写</span>的文字。
+
+实现方式：
+
+~~~
+这是<span style="color: red">用红色书写</span>的文字。
+~~~
+
+### 7 行内属性
+
+块级元素可以设定属性，行内元素可以使用*span inline attribute list(缩写为 span IAL)*。一个 span IAL 就像一个块一样具有相同的语法——就是在 span 后马上写入属性定义：
+
+这是*红色*{: style="color: red"}。
+
+实现方式：
+
+~~~
+这是*红色*{: style="color: red"}。
+~~~
