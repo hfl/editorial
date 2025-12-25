@@ -4,3 +4,5 @@ em {
     text-emphasis-position: under;
 }
 p{text-indent: 2em;}
+
+.text-right{text-align: right}

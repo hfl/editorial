@@ -1,29 +1,48 @@
 ---
 layout: post
-title:  "人人皆可 Webook！"
-date:   2025-12-19 14:59:00 +0800
-categories: webook
+title:  增加分页功能
+date:   2025-12-20 14:59:00 +0800
+categories: jekyll pagniator
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-Jekyll requires blog post files to be named according to the following format:
+为 Jekyll 添加分页功能。该功能在 2 版本之前是内容功能，2 版本之后分离为单独的插件公共。如果需要则要单独添加：
 
-`YEAR-MONTH-DAY-title.MARKUP`
-
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+1. 在 `Gemfile` 文件中增加 `jekyll-paginate` 插件：
+   ~~~ruby
+    gem jekyll-paginate
+   ~~~
+2. 在 `_config.yml` 中添加插件：
+   ~~~ruby
+     plugins:
+       - jekyll-paginate
+   ~~~
+3. 同时设置每页显示博客数量`paginate: 5`
+4. 首页必须是 `.html` 格式，也就是首页的文件名为 `index.html`
+5. 添加分页显示代码：
+   ~~~ruby
+     {% if paginator.total_pages > 1 %}
+       <div class="pagination">
+     {% if paginator.previous_page %}
+       <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Prev</a>
+     {% else %}
+       <span>&laquo; Prev</span>
+     {% endif %}
+     
+     {% for page in (1..paginator.total_pages) %}
+     {% if page == paginator.page %}
+       <em>{{ page }}</em>
+     {% elsif page == 1 %}
+       <a href="{{ site.paginate_path | relative_url | replace: 'page:num/', '' }}">{{ page }}</a>
+     {% else %}
+       <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+     {% endif %}
+     {% endfor %}
+      
+     {% if paginator.next_page %}
+       <a href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
+     {% else %}
+       <span>Next &raquo;</span>
+     {% endif %}
+      </div>
+     {% endif %}
+   ~~~
